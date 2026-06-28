@@ -340,10 +340,10 @@ export default function Projects() {
 
   const fetchProjects = async () => {
     setLoading(true);
-    const { data } = await supabase
-      .from("projects")
-      .select("*")
-      .order("created_at", { ascending: false });
+    const { data, error } = await supabase
+  .from('projects')
+  .select('*')
+  .order('created_at', { ascending: false });
     setProjects(data || []);
     setLoading(false);
   };
