@@ -1,15 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+// Tembak langsung nilainya di sini tanpa menggunakan import.meta.env
+const supabaseUrl = 'https://fagridgenreqatusfrrn.supabase.co'; 
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'; // <--- Paste token panjang eyJ... milikmu di sini secara utuh
 
-export const isSupabaseConfigured = Boolean(supabaseUrl && supabaseKey);
+export const isSupabaseConfigured = true;
 
-if (!isSupabaseConfigured) {
-  console.warn('Supabase environment variables are not configured. The app will run in fallback mode.');
-}
-
-export const supabase = createClient(
-  supabaseUrl || 'https://placeholder.supabase.co', 
-  supabaseKey || 'placeholder'
-);
+export const supabase = createClient(supabaseUrl, supabaseKey);
