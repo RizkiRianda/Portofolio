@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <!-- Lucide Icons untuk ikon infrastruktur/jaringan -->
+<script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Font Awesome untuk Ikon Teknologi -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..0,800;1,300..0,800&display=swap" rel="stylesheet">
+
+<style>
+  body { font-family: 'Plus Jakarta Sans', sans-serif; }
+</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio  - Rizki Rianda</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Perbaikan Konfigurasi Dark Mode -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Ini memastikan Tailwind memantau class="dark" di tag <html>
+            theme: {
+                extend: {}
+            }
+        }
+    </script>
+</head>
+
+<!-- PERBAIKAN -->
+<body id="beranda" class="bg-gray-50 text-gray-800 dark:bg-gray-950 dark:text-gray-100 font-sans transition-colors duration-300">
+
+    <!-- NAV BAR -->
+    <nav class="fixed top-0 left-0 right-0 bg-white/80 dark:bg-gray-950/80 backdrop-blur-md z-50 border-b border-gray-100 dark:border-gray-900">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="text-xl font-bold text-gray-900 dark:text-white">Portofolio.</a>
+
+        <!-- Kanan: Menu Desktop & Tombol Aksi -->
+        <div class="flex items-center gap-4">
+            <!-- Menu Navigasi Desktop (Sembunyi di HP, Muncul di Laptop) -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+                <a href="#beranda" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Beranda</a>
+                <a href="#keahlian" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Keahlian</a>
+                <a href="#proyek" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Proyek</a>
+                <a href="#kontak" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Kontak</a>
+            </div>
+
+            <!-- Tombol Toggle Dark Mode -->
+            <button id="theme-toggle" class="p-2 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800 text-amber-500 dark:text-amber-400 hover:scale-105 transition-all">
+                <i data-lucide="sun" class="w-5 h-5 block dark:hidden"></i>
+                <i data-lucide="moon" class="w-5 h-5 hidden dark:block"></i>
+            </button>
+
+            <!-- Tombol Hamburger Mobile (HANYA MUNCUL DI HP) -->
+            <button id="menu-toggle" class="p-2 rounded-xl bg-gray-50 dark:bg-gray-900 border border-gray-200/50 dark:border-gray-800 text-gray-600 dark:text-gray-300 md:hidden hover:scale-105 transition-all">
+                <i data-lucide="menu" class="w-5 h-5 block" id="menu-icon-open"></i>
+                <i data-lucide="x" class="w-5 h-5 hidden" id="menu-icon-close"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Menu Navigasi Dropdown Mobile (Muncul ke bawah saat tombol hamburger diklik) -->
+    <div id="mobile-menu" class="hidden border-b border-gray-100 dark:border-gray-900 bg-white dark:bg-gray-950 px-4 py-4 space-y-3 shadow-lg md:hidden">
+        <a href="#beranda" class="mobile-nav-link block text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2">Beranda</a>
+        <a href="#keahlian" class="mobile-nav-link block text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2">Keahlian</a>
+        <a href="#proyek" class="mobile-nav-link block text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2">Proyek</a>
+        <a href="#kontak" class="mobile-nav-link block text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 py-2">Kontak</a>
+    </div>
+</nav>
+
+    <!-- HERO SECTION (TENTANG) -->
+    <section id="tentang" class="max-w-5xl mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-12">
+        <div class="flex-1 space-y-6">
+            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight">
+                Halo, Saya <span class="text-indigo-600 dark:text-indigo-400">Rizki Rianda</span>
+            </h1>
+            <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+                Saya Bekerja di Perusahaan PT Comtronics System,Bandung (Network Infrastruktur) & juga Sebagai mahasiswa Sistem Informasi Di Universitas Terbuka yang tertarik dengan Web Developer. untuk di dunia IT / infrastruktur jaringan, manajemen sistem, dan analisis data Alhamdulillah sejak tahun 2011 - Sekarang masih terus mengasah keahlian saya agar menjadi yang terbaik & Profesional.
+            </p>
+            <div class="pt-2">
+                <a href="#proyek" class="bg-indigo-600 text-white dark:bg-indigo-500 px-6 py-3 rounded-lg font-medium hover:bg-indigo-700 dark:hover:bg-indigo-600 transition shadow-lg shadow-indigo-200 dark:shadow-none">
+                    Lihat Proyek Saya
+                </a>
+            </div>
+        </div>
+        <div class="flex-1 flex justify-center">
+            <!-- Tambahkan overflow-hidden pada baris 69 agar fotonya ikut membulat -->
+            <div class="w-64 h-64 bg-indigo-100 dark:bg-gray-800 rounded-full border-4 border-indigo-500/20 shadow-xl overflow-hidden flex items-center justify-center">
+                <!-- Ganti tag span lama Anda pada baris 70 dengan tag img ini -->
+                <img src="foto-profil.JPG" 
+                     alt="Rizki Rianda" 
+                     class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+            </div>
+        </div>
+    </section>
+
+
+<!-- SKILLS SECTION -->
+<!-- SKILLS SECTION -->
+<section id="keahlian" class="max-w-5xl mx-auto px-4 py-16 transition-all duration-300">
+    <div class="text-center md:text-left mb-10">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Keahlian & Teknologi</h2>
+        <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">Spesialisasi infrastruktur jaringan dan pengembangan sistem informasi.</p>
+    </div>
+
+    <!-- Grid Container -->
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+        
+        <!-- Network Engineer -->
+        <div class="p-5 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm flex flex-col justify-between hover:border-indigo-500 dark:hover:border-indigo-400 transition-all group">
+            <div class="p-3 bg-indigo-50 dark:bg-indigo-950/50 rounded-xl text-indigo-600 dark:text-indigo-400 w-fit">
+                <i data-lucide="network" class="w-6 h-6"></i>
+            </div>
+            <div class="mt-4">
+                <span class="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">Role</span>
+                <h3 class="font-bold text-sm text-gray-800 dark:text-gray-200 mt-0.5">Network Engineer</h3>
+            </div>
+        </div>
+
+        <!-- Network Infrastructure -->
+        <div class="p-5 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm flex flex-col justify-between hover:border-indigo-500 dark:hover:border-indigo-400 transition-all">
+            <div class="p-3 bg-indigo-50 dark:bg-indigo-950/50 rounded-xl text-indigo-600 dark:text-indigo-400 w-fit">
+                <i data-lucide="server" class="w-6 h-6"></i>
+            </div>
+            <div class="mt-4">
+                <span class="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">Core</span>
+                <h3 class="font-bold text-sm text-gray-800 dark:text-gray-200 mt-0.5">Network Infrastructure</h3>
+            </div>
+        </div>
+
+        <!-- Radio Link (PTP/PTMP) -->
+        <div class="p-5 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm flex flex-col justify-between hover:border-indigo-500 dark:hover:border-indigo-400 transition-all">
+            <div class="p-3 bg-indigo-50 dark:bg-indigo-950/50 rounded-xl text-indigo-600 dark:text-indigo-400 w-fit">
+                <i data-lucide="radio" class="w-6 h-6"></i>
+            </div>
+            <div class="mt-4">
+                <span class="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">Wireless</span>
+                <h3 class="font-bold text-sm text-gray-800 dark:text-gray-200 mt-0.5">Radio Link (PTP/PTMP)</h3>
+            </div>
+        </div>
+
+        <!-- VSAT -->
+        <div class="p-5 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm flex flex-col justify-between hover:border-indigo-500 dark:hover:border-indigo-400 transition-all">
+            <div class="p-3 bg-indigo-50 dark:bg-indigo-950/50 rounded-xl text-indigo-600 dark:text-indigo-400 w-fit">
+                <i data-lucide="satellite" class="w-6 h-6"></i>
+            </div>
+            <div class="mt-4">
+                <span class="text-[10px] font-bold text-indigo-600 dark:text-indigo-400 uppercase tracking-widest">Satellite</span>
+                <h3 class="font-bold text-sm text-gray-800 dark:text-gray-200 mt-0.5">VSAT Connection</h3>
+            </div>
+        </div>
+
+        <!-- MikroTik -->
+        <div class="p-5 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm flex flex-col justify-between hover:border-indigo-500 dark:hover:border-indigo-400 transition-all">
+            <div class="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl w-fit flex items-center justify-center">
+                <img src="https://cdn.simpleicons.org/mikrotik/00AEEF" class="w-6 h-6 object-contain" alt="MikroTik" />
+            </div>
+            <div class="mt-4">
+                <span class="text-[10px] font-bold text-amber-600 uppercase tracking-widest">Hardware</span>
+                <h3 class="font-bold text-sm text-gray-800 dark:text-gray-200 mt-0.5">MikroTik RouterOS</h3>
+            </div>
+        </div>
+
+        <!-- JavaScript -->
+        <div class="p-5 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm flex flex-col justify-between hover:border-indigo-500 dark:hover:border-indigo-400 transition-all">
+            <div class="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl w-fit flex items-center justify-center">
+                <img src="https://cdn.simpleicons.org/javascript" class="w-6 h-6" alt="JavaScript" />
+            </div>
+            <div class="mt-4">
+                <span class="text-[10px] font-bold text-yellow-600 dark:text-yellow-500 uppercase tracking-widest">Language</span>
+                <h3 class="font-bold text-sm text-gray-800 dark:text-gray-200 mt-0.5">Vanilla JavaScript</h3>
+            </div>
+        </div>
+
+        <!-- Tailwind & CSS -->
+        <div class="p-5 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm flex flex-col justify-between hover:border-indigo-500 dark:hover:border-indigo-400 transition-all">
+            <div class="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl w-fit flex items-center justify-center gap-3">
+                <img src="https://cdn.simpleicons.org/tailwindcss" class="w-6 h-6" alt="Tailwind CSS" />
+                <img src="https://cdn.simpleicons.org/css" class="w-6 h-6" alt="CSS3" />
+            </div>
+            <div class="mt-4">
+                <span class="text-[10px] font-bold text-cyan-600 dark:text-cyan-400 uppercase tracking-widest">Styling</span>
+                <h3 class="font-bold text-sm text-gray-800 dark:text-gray-200 mt-0.5">CSS & Tailwind CSS</h3>
+            </div>
+        </div>
+
+        <!-- Python -->
+        <div class="p-5 bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl shadow-sm flex flex-col justify-between hover:border-indigo-500 dark:hover:border-indigo-400 transition-all">
+            <div class="p-3 bg-gray-50 dark:bg-gray-800 rounded-xl w-fit flex items-center justify-center">
+                <img src="https://cdn.simpleicons.org/python" class="w-6 h-6" alt="Python" />
+            </div>
+            <div class="mt-4">
+                <span class="text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase tracking-widest">Data / Scripting</span>
+                <h3 class="font-bold text-sm text-gray-800 dark:text-gray-200 mt-0.5">Python Programming</h3>
+            </div>
+        </div>
+
+    </div> <!-- Di sini tadinya tag div penutup grid ini hilang/lupa dipasang -->
+</section>
+
+    <!-- PROYEK SECTION -->
+<!-- BAGIAN PROYEK DENGAN DOKUMENTASI GAMBAR -->
+<section id="proyek" class="max-w-5xl mx-auto px-4 py-20">
+    <div class="mb-10 text-center md:text-left">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 dark:text-white">Proyek Saya</h2>
+        <p class="text-gray-500 dark:text-gray-400 mt-2">Beberapa dokumentasi sistem dan implementasi teknologi yang saya kerjakan.</p>
+    </div>
+
+    <!-- Container Grid 4 Kolom -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <!-- KARTU PROYEK 1: Topology Design Gedung -->
+        <div class="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800/60 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+            <div>
+                <!-- Gambar Dokumentasi 1 -->
+                <div class="h-40 w-full bg-gray-100 dark:bg-gray-800">
+                    <img src="proyek-topology.jpg" alt="Topology Design Gedung" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                </div>
+                <div class="p-5">
+                    <div class="p-3 bg-indigo-50 dark:bg-indigo-950/30 text-indigo-600 dark:text-indigo-400 rounded-xl w-fit mb-4">
+                        <i data-lucide="network" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">Topology Design Gedung</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">Perancangan skema interkoneksi jaringan multi-floor menggunakan integrasi perangkat MikroTik dan Ruijie.</p>
+                </div>
+            </div>
+            <div class="px-5 pb-5">
+                <span class="text-xs font-medium text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-950/40 px-2.5 py-1 rounded-md w-fit">Infrastructure</span>
+            </div>
+        </div>
+
+        <!-- KARTU PROYEK 2: Surveillance Multi-Ch -->
+        <div class="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800/60 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+            <div>
+                <!-- Gambar Dokumentasi 2 -->
+                <div class="h-40 w-full bg-gray-100 dark:bg-gray-800">
+                    <img src="proyek-cctv.jpg" alt="Surveillance Multi-Ch" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                </div>
+                <div class="p-5">
+                    <div class="p-3 bg-amber-50 dark:bg-amber-950/30 text-amber-600 dark:text-amber-400 rounded-xl w-fit mb-4">
+                        <i data-lucide="shield" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">Surveillance Multi-Ch</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">Manajemen kalkulasi penyimpanan & instalasi sistem kamera keamanan Hikvision 16-channel berbasis IP Cam.</p>
+                </div>
+            </div>
+            <div class="px-5 pb-5">
+                <span class="text-xs font-medium text-amber-600 dark:text-amber-400 bg-amber-50 dark:bg-amber-950/40 px-2.5 py-1 rounded-md w-fit">Security</span>
+            </div>
+        </div>
+
+        <!-- KARTU PROYEK 3: Radio Link Point-to-Point -->
+        <div class="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800/60 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+            <div>
+                <!-- Gambar Dokumentasi 3 -->
+                <div class="h-40 w-full bg-gray-100 dark:bg-gray-800">
+                    <img src="proyek-wireless.jpg" alt="Radio Link Point-to-Point" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                </div>
+                <div class="p-5">
+                    <div class="p-3 bg-sky-50 dark:bg-sky-950/30 text-sky-600 dark:text-sky-400 rounded-xl w-fit mb-4">
+                        <i data-lucide="radio" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">Radio Link Point-to-Point</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">Implementasi dan konfigurasi perangkat nirkabel luar ruangan (Ubiquiti/UBNT) untuk interkoneksi jaringan jarak jauh antar wilayah gedung.</p>
+                </div>
+            </div>
+            <div class="px-5 pb-5">
+                <span class="text-xs font-medium text-sky-600 dark:text-sky-400 bg-sky-50 dark:bg-sky-950/40 px-2.5 py-1 rounded-md w-fit">Wireless Network</span>
+            </div>
+        </div>
+
+        <!-- KARTU PROYEK 4: Server Management -->
+        <div class="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800/60 rounded-2xl shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+            <div>
+                <!-- Gambar Dokumentasi 4 -->
+                <div class="h-40 w-full bg-gray-100 dark:bg-gray-800">
+                    <img src="proyek-server.jpg" alt="Server Management" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                </div>
+                <div class="p-5">
+                    <div class="p-3 bg-emerald-50 dark:bg-emerald-950/30 text-emerald-600 dark:text-emerald-400 rounded-xl w-fit mb-4">
+                        <i data-lucide="database" class="w-5 h-5"></i>
+                    </div>
+                    <h3 class="font-bold text-lg text-gray-900 dark:text-white mb-2">Server Management</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">Konfigurasi berkala dan optimasi performa server lokal guna menjaga efisiensi lalu lintas data.</p>
+                </div>
+            </div>
+            <div class="px-5 pb-5">
+                <span class="text-xs font-medium text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/40 px-2.5 py-1 rounded-md w-fit">Systems</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+ 
+        <!-- FOOTER (KONTAK) -->
+    <footer id="kontak" class="bg-gray-950 text-gray-400 py-12 border-t border-gray-900 transition-colors duration-300">
+        <div class="max-w-5xl mx-auto px-4 text-center space-y-6">
+            <h2 class="text-2xl font-bold text-white">Mari Terhubung</h2>
+            <p class="text-sm max-w-md mx-auto text-gray-400">
+                Silakan hubungi saya jika Anda tertarik untuk berkolaborasi atau sekadar berdiskusi tentang teknologi informasi.
+            </p>
+            
+            <!-- Grid Media Sosial & Chat -->
+            <div class="flex flex-wrap justify-center items-center gap-3 pt-2">
+                
+                <!-- WhatsApp (Ganti 628xxxxxxxxxx dengan nomor Anda) -->
+                <a href="https://wa.me/6281372162322?text=Halo%20Rizki" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="flex items-center gap-2 px-4 py-2.5 bg-gray-900 border border-gray-800 rounded-xl hover:border-[#25D366] hover:text-white transition-all duration-300 group text-sm font-medium">
+                    <img src="https://cdn.simpleicons.org/whatsapp" class="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" alt="WhatsApp" />
+                    <span>WhatsApp</span>
+                </a>
+
+                <!-- LinkedIn (Menggunakan Inline SVG - 100% PASTI MUNCUL) -->
+                <a href="https://linkedin.com/in/RizkiRianda" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="flex items-center gap-2 px-4 py-2.5 bg-gray-900 border border-gray-800 rounded-xl hover:border-[#0A66C2] hover:text-white transition-all duration-300 group text-sm font-medium">
+                    <!-- Kode Vektor Ikon LinkedIn -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+                <!-- Instagram (Ganti dengan URL profil Instagram Anda) -->
+                <a href="https://www.instagram.com/Rizki-Rianda/" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="flex items-center gap-2 px-4 py-2.5 bg-gray-900 border border-gray-800 rounded-xl hover:border-[#E4405F] hover:text-white transition-all duration-300 group text-sm font-medium">
+                    <img src="https://cdn.simpleicons.org/instagram" class="w-4 h-4 opacity-60 group-hover:opacity-100 transition-opacity" alt="Instagram" />
+                    <span>Instagram</span>
+                </a>
+
+                <!-- TikTok (Ganti dengan URL profil TikTok Anda) -->
+                <a href="https://tiktok.com/@rizkiriianda" 
+                   target="_blank" 
+                   rel="noopener noreferrer"
+                   class="flex items-center gap-2 px-4 py-2.5 bg-gray-900 border border-gray-800 rounded-xl hover:border-[#000000] dark:hover:border-[#FFFFFF] hover:text-white transition-all duration-300 group text-sm font-medium">
+                    <img src="https://cdn.simpleicons.org/tiktok" class="w-4 h-4 opacity-60 group-hover:opacity-100 dark:group-hover:invert transition-opacity" alt="TikTok" />
+                    <span>TikTok</span>
+                </a>
+
+            </div>
+
+            <div class="pt-6 text-xs text-gray-700 dark:text-gray-600 border-t border-gray-900/50">
+                &copy; 2026 Rizki Rianda.
+            </div>
+        </div>
+    </footer>
+
+   <div class="pt-6 text-xs text-gray-700 dark:text-gray-600 border-t border-gray-900/50">
+                &copy; 2026 Rizki Rianda.
+            </div>
+        </div>
+    </footer>
+
+    <!-- TOMBOL WHATSAPP MELAYANG -->
+    <a href="https://wa.me/6281372162322?text=Halo%20Rizki,%20saya%20tertarik%20dengan%20portofolio%20Anda." 
+       target="_blank" 
+       rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 z-50 p-4 bg-[#25D366] hover:bg-[#20ba5a] text-white rounded-full shadow-xl hover:shadow-2xl transition-all hover:-translate-y-1 flex items-center justify-center group"
+       title="Hubungi via WhatsApp">
+        <img src="https://cdn.simpleicons.org/whatsapp/white" class="w-6 h-6 group-hover:scale-110 transition-transform" alt="WhatsApp" />
+    </a>
+
+    <!-- Pustaka Lucide Icons (Dimuat Lebih Dulu) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      // Inisialisasi awal icon
+      lucide.createIcons();
+    </script>
+
+    <!-- SCRIPT LOGIKA UTAMA (Hapus pemanggilan app.js lama agar tidak bentrok) -->
+    <script>
+        // === 1. LOGIKA NAVBAR MOBILE (HAMBURGER) ===
+        const menuToggleBtn = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        if (menuToggleBtn && mobileMenu) {
+            menuToggleBtn.addEventListener('click', function(e) {
+                e.preventDefault(); // Mencegah loncatan halaman tidak sengaja
+                const isHidden = mobileMenu.classList.contains('hidden');
+                
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    menuIconOpen.classList.add('hidden');
+                    menuIconClose.classList.remove('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    menuIconOpen.classList.remove('hidden');
+                    menuIconClose.classList.add('hidden');
+                }
+            });
+        }
+
+        // Tutup menu mobile otomatis setelah memilih menu (Scroll)
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            });
+        });
+
+
+        // === 2. LOGIKA DARK MODE ===
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+
+        function updateIcons() {
+            const sunIcon = themeToggleBtn.querySelector('[data-lucide="sun"]');
+            const moonIcon = themeToggleBtn.querySelector('[data-lucide="moon"]');
+            
+            if (htmlElement.classList.contains('dark')) {
+                sunIcon.classList.add('hidden');
+                sunIcon.classList.remove('block');
+                moonIcon.classList.remove('hidden');
+                moonIcon.classList.add('block');
+            } else {
+                sunIcon.classList.remove('hidden');
+                sunIcon.classList.add('block');
+                moonIcon.classList.add('hidden');
+                moonIcon.classList.remove('block');
+            }
+        }
+
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            htmlElement.classList.add('dark');
+        } else {
+            htmlElement.classList.remove('dark');
+        }
+        
+        setTimeout(updateIcons, 50);
+
+        themeToggleBtn.addEventListener('click', function() {
+            if (htmlElement.classList.contains('dark')) {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+            updateIcons();
+        });
+    </script>
+</body>
+</html>
